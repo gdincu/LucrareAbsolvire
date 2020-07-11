@@ -1,10 +1,11 @@
-using API.Data;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Infrastructure.Data;
 
 namespace API
 {
@@ -24,6 +25,7 @@ namespace API
         {
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IChargingPointRepository, ChargingPointRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

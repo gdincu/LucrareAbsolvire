@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using API.Entities;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -12,24 +13,25 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ChargingPointsController : ControllerBase
     {
-        private readonly StoreContext _context;
+        private readonly IChargingPointRepository _repo;
 
-        public ChargingPointsController(StoreContext context)
+        public ChargingPointsController(IChargingPointRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ChargingPoint>>> GetPoints()
+        public async Task<ActionResult<List<ChargingPoint>>> GetChargingPoints()
         {
-            var chargingPoints = await _context.ChargingPoints.ToListAsync();
+            var chargingPoints = await _repo.GetChargingPointsAsync();
             return Ok(chargingPoints);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ChargingPoint>> GetPoint(int id)
+        public async Task<ActionResult<ChargingPoint>> GetChargingPoint(int id)
         {
-            return await _context.ChargingPoints.FindAsync(id);
+            var chargingPoint = await _repo.GetChargingPointByIdAsync(id);
+            return Ok(chargingPoint);
         }
 
         [HttpPost]
