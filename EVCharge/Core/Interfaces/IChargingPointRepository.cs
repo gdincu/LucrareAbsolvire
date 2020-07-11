@@ -8,7 +8,7 @@ namespace Core.Interfaces
     {
         Task<ChargingPoint> GetChargingPointByIdAsync(int id);
         Task<IReadOnlyList<ChargingPoint>> GetChargingPointsAsync();
-        //Task<IReadOnlyList<ProductBrand>> GetChargingPointLocationsAsync();
-        //Task<IReadOnlyList<ProductType>> GetChargingPointTypesAsync();
+        Task<IReadOnlyList<ChargingPointLocation>> GetChargingPointLocationsAsync();
+        Task<IReadOnlyList<ChargingPointType>> GetChargingPointTypesAsync();
     }
 }

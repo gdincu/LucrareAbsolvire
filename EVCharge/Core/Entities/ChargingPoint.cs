@@ -5,9 +5,15 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class ChargingPoint
+    public class ChargingPoint: BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-    }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public string PictureUrl { get; set; }
+        public ChargingPointLocation ChargingPointLocation { get; set; }
+        public int ChargingPointLocationId { get; set; } 
+        public ChargingPointType ChargingPointType { get; set; }
+        public int ChargingPointTypeId { get; set; }
+}
 }

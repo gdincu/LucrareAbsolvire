@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
@@ -16,14 +15,30 @@ namespace Infrastructure.Data
             _context = context;
         }
 
-        public async Task<ChargingPoint> GetChargingPointByIdAsync(int id)
-        {
-            return await _context.ChargingPoints.FindAsync(id);
-        }
-
         public async Task<IReadOnlyList<ChargingPoint>> GetChargingPointsAsync()
         {
-            return await _context.ChargingPoints.ToListAsync();
+            return await _context.ChargingPoints
+                .Include(p => p.ChargingPointLocation)
+                .Include(p => p.ChargingPointType)
+                .ToListAsync();
+        }
+
+        public async Task<ChargingPoint> GetChargingPointByIdAsync(int id)
+        {
+            return await _context.ChargingPoints
+                .Include(p => p.ChargingPointLocation)
+                .Include(p => p.ChargingPointType)
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }       
+
+        public async Task<IReadOnlyList<ChargingPointLocation>> GetChargingPointLocationsAsync()
+        {
+            return await _context.ChargingPointLocations.ToListAsync();
+        }
+
+        public async Task<IReadOnlyList<ChargingPointType>> GetChargingPointTypesAsync()
+        {
+            return await _context.ChargingPointTypes.ToListAsync();
         }
     }
 }

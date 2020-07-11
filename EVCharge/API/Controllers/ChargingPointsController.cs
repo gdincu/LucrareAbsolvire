@@ -1,13 +1,10 @@
-﻿using API.Data;
-using API.Entities;
+﻿using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Controllers
+namespace Core.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -50,6 +47,18 @@ namespace API.Controllers
         public string DeletePoint(int id)
         {
             return "DELETE";
+        }
+
+        [HttpGet("locations")]
+        public async Task<ActionResult<IReadOnlyList<ChargingPointLocation>>> GetChargingPointLocations()
+        {
+            return Ok(await _repo.GetChargingPointLocationsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ChargingPointType>>> GetChargingPointTypes()
+        {
+            return Ok(await _repo.GetChargingPointTypesAsync());
         }
 
     }
