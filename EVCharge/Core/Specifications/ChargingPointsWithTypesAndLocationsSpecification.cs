@@ -11,6 +11,7 @@ namespace Core.Specifications
     public class ChargingPointsWithTypesAndLocationsSpecification : BaseSpecification<ChargingPoint>
     {
         public ChargingPointsWithTypesAndLocationsSpecification(ChargingPointParams parameters) : base(x => (
+            (string.IsNullOrEmpty(parameters.Search) || x.Name.ToLower().Contains(parameters.Search)) &&
             (!parameters.LocationId.HasValue || x.ChargingPointLocationId == parameters.LocationId) &&
             (!parameters.TypeId.HasValue || x.ChargingPointTypeId == parameters.TypeId)
           ))
