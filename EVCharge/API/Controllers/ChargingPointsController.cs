@@ -1,13 +1,13 @@
 ﻿using API.Controllers;
 using API.Dtos;
 using API.Errors;
+using API.Helpers;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,14 +31,18 @@ namespace Core.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ChargingPointToReturnDto>>> GetChargingPoints(string sort,int? locationId, int? typeId)
+        public async Task<ActionResult<Pagination<ChargingPointToReturnDto>>> GetChargingPoints(
+            [FromQuery]ChargingPointParams parameters)
         {
-            var spec = new ChargingPointsWithTypesAndLocationsSpecification(sort, locationId, typeId);
+            var spec = new ChargingPointsWithTypesAndLocationsSpecification(parameters);
+            var countSpec = new ChargingPointWithFiltersCount(parameters);
+            var totalItems = await _chargingPointRepo.CountAsync(countSpec);
             var chargingPoints = await _chargingPointRepo.ListAsync(spec);
+            var data = _mapper.Map<IReadOnlyList<ChargingPoint>, IReadOnlyList<ChargingPointToReturnDto>>(chargingPoints);
 
             if (chargingPoints == null) return NotFound(new ApiResponse(404));
-            
-            return Ok(_mapper.Map<IReadOnlyList<ChargingPoint>, IReadOnlyList<ChargingPointToReturnDto>>(chargingPoints));
+
+            return Ok(new Pagination<ChargingPointToReturnDto>(parameters.PageIndex, parameters.PageSize, totalItems, data));
         }
 
         [HttpGet("{id}")]

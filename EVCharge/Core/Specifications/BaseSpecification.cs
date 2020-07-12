@@ -40,7 +40,7 @@ namespace Core.Specifications
             OrderByDescending = orderByDescExpression;
         }
 
-        /*public int Take {get; private set;}
+        public int Take {get; private set;}
 
         public int Skip {get; private set;}
 
@@ -51,6 +51,6 @@ namespace Core.Specifications
             Skip = skip;
             Take = take;
             IsPagingEnabled = true;
-        }*/
+        }
     }
 }

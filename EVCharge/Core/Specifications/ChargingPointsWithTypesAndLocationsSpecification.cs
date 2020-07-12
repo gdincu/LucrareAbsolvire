@@ -10,17 +10,19 @@ namespace Core.Specifications
 #nullable enable
     public class ChargingPointsWithTypesAndLocationsSpecification : BaseSpecification<ChargingPoint>
     {
-        public ChargingPointsWithTypesAndLocationsSpecification(string sort, int? locationId, int? typeId) : base(x => (
-            (!locationId.HasValue || x.ChargingPointLocationId == locationId) &&
-            (!typeId.HasValue || x.ChargingPointTypeId == typeId)
+        public ChargingPointsWithTypesAndLocationsSpecification(ChargingPointParams parameters) : base(x => (
+            (!parameters.LocationId.HasValue || x.ChargingPointLocationId == parameters.LocationId) &&
+            (!parameters.TypeId.HasValue || x.ChargingPointTypeId == parameters.TypeId)
           ))
         {
             AddInclude(x => x.ChargingPointType);
             AddInclude(x => x.ChargingPointLocation);
+            AddOrderBy(x => x.Name);
+            ApplyPaging(parameters.PageSize * (parameters.PageIndex - 1),parameters.PageSize);
 
-            if(!string.IsNullOrEmpty(sort))
+            if(!string.IsNullOrEmpty(parameters.Sort))
             {
-                switch (sort.ToLower())
+                switch (parameters.Sort.ToLower())
                 {
                     //Order by location
                     case "locationasc":
