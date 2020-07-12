@@ -1,18 +1,18 @@
-﻿using API.Dtos;
+﻿using API.Controllers;
+using API.Dtos;
+using API.Errors;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ChargingPointsController : ControllerBase
+    public class ChargingPointsController : BaseApiController
     {
         private readonly IGenericRepository<ChargingPoint> _chargingPointRepo;
         private readonly IGenericRepository<ChargingPointLocation> _chargingPointLocationRepo;
@@ -35,7 +35,7 @@ namespace Core.Controllers
             var spec = new ChargingPointsWithTypesAndLocationsSpecification();
             var chargingPoints = await _chargingPointRepo.ListAsync(spec);
             //v1 -> return Ok(chargingPoints);
-            
+
             /*v2 -> return Ok(chargingPoints.Select(chargingPoint => new ChargingPointToReturnDto {
                 Id = chargingPoint.Id,
                 Name = chargingPoint.Name,
@@ -46,11 +46,14 @@ namespace Core.Controllers
                 ChargingPointLocation = chargingPoint.ChargingPointLocation.Name
             }).ToList());*/
 
+            if (chargingPoints == null) return NotFound(new ApiResponse(404));
             //v3
             return Ok(_mapper.Map<IReadOnlyList<ChargingPoint>, IReadOnlyList<ChargingPointToReturnDto>>(chargingPoints));
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ChargingPointToReturnDto>> GetChargingPoint(int id)
         {
             //var chargingPoint = await _chargingPointRepo.GetByIdAsync(id);
@@ -69,7 +72,9 @@ namespace Core.Controllers
                 ChargingPointType = chargingPoint.ChargingPointType.Name,
                 ChargingPointLocation = chargingPoint.ChargingPointLocation.Name
             }); */
-            
+
+            if (chargingPoint == null) return NotFound(new ApiResponse(404));
+
             //v3
             return _mapper.Map<ChargingPoint, ChargingPointToReturnDto>(chargingPoint);
         }
