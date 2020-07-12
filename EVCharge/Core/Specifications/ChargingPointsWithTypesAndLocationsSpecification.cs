@@ -1,14 +1,19 @@
 ﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
 namespace Core.Specifications
 {
+#nullable enable
     public class ChargingPointsWithTypesAndLocationsSpecification : BaseSpecification<ChargingPoint>
     {
-        public ChargingPointsWithTypesAndLocationsSpecification(string sort)
+        public ChargingPointsWithTypesAndLocationsSpecification(string sort, int? locationId, int? typeId) : base(x => (
+            (!locationId.HasValue || x.ChargingPointLocationId == locationId) &&
+            (!typeId.HasValue || x.ChargingPointTypeId == typeId)
+          ))
         {
             AddInclude(x => x.ChargingPointType);
             AddInclude(x => x.ChargingPointLocation);
@@ -52,4 +57,5 @@ namespace Core.Specifications
             AddInclude(x => x.ChargingPointLocation);
         }
     }
+#nullable restore
 }

@@ -7,6 +7,7 @@ using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,9 +31,9 @@ namespace Core.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ChargingPointToReturnDto>>> GetChargingPoints(string sort)
+        public async Task<ActionResult<List<ChargingPointToReturnDto>>> GetChargingPoints(string sort,int? locationId, int? typeId)
         {
-            var spec = new ChargingPointsWithTypesAndLocationsSpecification(sort);
+            var spec = new ChargingPointsWithTypesAndLocationsSpecification(sort, locationId, typeId);
             var chargingPoints = await _chargingPointRepo.ListAsync(spec);
 
             if (chargingPoints == null) return NotFound(new ApiResponse(404));
