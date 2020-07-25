@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EVCharge",
+    "\\EVCharge\\Client",
+    "\\EVCharge\\Client\\src",
+    "\\EVCharge\\Client\\src\\app",
+    "\\EVCharge\\Client\\src\\assets"
+  ],
+  "SelectedNode": "\\EVCharge\\Client\\src\\app\\app.component.html",
+  "PreviewInSolutionExplorer": false
+}
