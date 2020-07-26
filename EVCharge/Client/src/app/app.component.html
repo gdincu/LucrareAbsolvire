@@ -4,4 +4,8 @@
   <h1>{{ title }} app is running!</h1>
 </div>
 
+<ul *ngFor="let item of chargingPoints">
+  <li class="list-unstyled">{{ item.name }}</li>
+</ul>
+
 

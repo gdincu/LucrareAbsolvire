@@ -1,17 +1,12 @@
-using Core.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Infrastructure.Data;
 using AutoMapper;
 using API.Helpers;
 using API.Middleware;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using API.Errors;
 using API.Extensions;
 
 namespace Core
