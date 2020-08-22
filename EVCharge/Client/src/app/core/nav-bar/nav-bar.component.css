@@ -14,19 +14,16 @@
 a {
   text-decoration: none;
   color: #343a40;
-  &.active
-
-{
-  color: orange;
 }
 
-}
+  a.active {
+    color: orange;
+  }
 
 .logo {
   cursor: pointer;
-  &:focus
+}
 
-{
-  outline: none;
-}
-}
+  .logo:focus {
+    outline: none;
+  }

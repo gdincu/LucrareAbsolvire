@@ -5,8 +5,10 @@
     "\\EVCharge\\Client",
     "\\EVCharge\\Client\\src",
     "\\EVCharge\\Client\\src\\app",
-    "\\EVCharge\\Client\\src\\app\\models"
+    "\\EVCharge\\Client\\src\\app\\shop",
+    "\\EVCharge\\Core",
+    "\\EVCharge\\Core\\Entities"
   ],
-  "SelectedNode": "\\EVCharge\\Client\\src\\app\\models\\pagination.ts",
+  "SelectedNode": "\\EVCharge\\Client\\src\\app\\shop\\shop.component.html",
   "PreviewInSolutionExplorer": false
 }
