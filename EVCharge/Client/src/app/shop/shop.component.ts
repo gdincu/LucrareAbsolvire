@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IChargingPoint } from '../shared/models/chargingPoint';
 import { ShopService } from './shop.service';
 import { IType } from '../shared/models/type';
@@ -11,7 +11,7 @@ import { ShopParams } from '../shared/models/shopParams';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
+  @ViewChild('search', { static: true }) searchValue: ElementRef;
   chargingPoints: IChargingPoint[];
   types: IType[];
   locations: ILocation[];
@@ -60,23 +60,41 @@ export class ShopComponent implements OnInit {
 
   onTypeSelected(typeId: number) {
     this.shopParams.typeId = typeId;
+    this.shopParams.pageNumber = 1;
     this.getChargingPoints();
   }
 
   onLocationSelected(locationId: number) {
     this.shopParams.locationId = locationId;
+    this.shopParams.pageNumber = 1;
     this.getChargingPoints();
   }
 
   onSortSelected(sort: string) {
     this.shopParams.sort = sort;
+    this.shopParams.pageNumber = 1;
     this.getChargingPoints
   }
 
   onPageChanged(event: any) {
-    this.shopParams.pageNumber = event;
+    const params = this.shopService.getShopParams();
+    if (params.pageNumber !== event) {
+      this.shopParams.pageNumber = event;
+      this.shopParams.pageNumber = 1;
+      this.getChargingPoints();
+    }
+  }
+
+  onSearch() {
+    this.shopParams.search = this.searchValue.nativeElement.value;
+    this.shopParams.pageNumber = 1;
     this.getChargingPoints();
   }
 
-
+  onReset() {
+    this.searchValue.nativeElement.value = '';
+    this.shopParams.pageNumber = 1;
+    this.shopParams = new ShopParams;
+    this.getChargingPoints();
+  } 
 }
