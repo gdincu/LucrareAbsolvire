@@ -5,6 +5,7 @@ import { ILocation } from '../shared/models/location';
 import { IType } from '../shared/models/type';
 import { map } from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
+import { IChargingPoint } from '../shared/models/chargingPoint';
 
 //Decorated with the Injectable decorator
 @Injectable({
@@ -13,12 +14,14 @@ import { ShopParams } from '../shared/models/shopParams';
 })
 export class ShopService {
   baseUrl = 'https://localhost:44374/api/';
+  shopParams = new ShopParams();
 
   constructor(private http: HttpClient) { }
 
   //Method to return charging points
   getChargingPoints(shopParams: ShopParams) {
     let params = new HttpParams();
+    
 
     if (shopParams.locationId != 0) params = params.append('locationId', shopParams.locationId.toString());
     if (shopParams.typeId != 0) params = params.append('typeId', shopParams.typeId.toString());
@@ -32,6 +35,10 @@ export class ShopService {
       .pipe(map(response => {
           return response.body;
         }));
+  }
+
+  getChargingPoint(id: number) {
+    return this.http.get<IChargingPoint>(this.baseUrl + 'chargingpoints/' + id);
   }
 
   getChargingPointLocations() {

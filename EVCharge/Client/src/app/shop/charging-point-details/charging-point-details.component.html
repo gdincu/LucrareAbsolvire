@@ -1,0 +1,21 @@
+<div class="row" *ngIf="chargingPoint">
+  <div class="col-6">
+    <img src="{{chargingPoint.pictureUrl}}" alt="{{chargingPoint.name}}" class="img-fluid w-100"/>
+  </div>
+  <div class="col-6">
+    <h3>{{chargingPoint.name}}</h3>
+    <p>{{chargingPoint.price | currency}} / hour</p>
+    <div class="d-flex justify-content-start align-items-center">
+      <i class="fa fa-cart-arrow-down text-danger mr-2" style="cursor: pointer; font-size: 2em"></i>
+      <span class="font-weight-bold" style="font-size: 1em;">1</span>
+      <i class="fa fa-cart-plus text-success mx-2" style="cursor: pointer; font-size: 2em"></i>
+      <button class="btn btn-outline-secondary btn-lg ml-5">Add to Cart</button>
+    </div>
+
+    <div class="col-12 ml-3">
+      <h4>Description</h4>
+      <p>{{chargingPoint.description}}</p>
+    </div>
+  </div>
+</div>
+
