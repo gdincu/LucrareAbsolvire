@@ -5,10 +5,11 @@
     "\\EVCharge\\Client",
     "\\EVCharge\\Client\\src",
     "\\EVCharge\\Client\\src\\app",
-    "\\EVCharge\\Client\\src\\app\\shop",
-    "\\EVCharge\\Core",
-    "\\EVCharge\\Core\\Entities"
+    "\\EVCharge\\Client\\src\\app\\core",
+    "\\EVCharge\\Client\\src\\app\\core\\http-interceptors",
+    "\\EVCharge\\Client\\src\\app\\core\\server-error",
+    "\\EVCharge\\Client\\src\\app\\core\\test-error"
   ],
-  "SelectedNode": "\\EVCharge\\Client\\src\\app\\shop\\shop.component.html",
+  "SelectedNode": "\\EVCharge\\Client\\src\\app\\core\\server-error\\server-error.component.ts",
   "PreviewInSolutionExplorer": false
 }
