@@ -16,6 +16,7 @@ namespace API.Dtos
         public DateTime Start { get; set; }
         [Required]
         public DateTime End { get; set; }
+        public int Quantity { get; set; }
         [Required]
         public string PhotoURL { get; set; }
         [Required]

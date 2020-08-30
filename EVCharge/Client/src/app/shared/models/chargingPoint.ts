@@ -1,9 +1,10 @@
 export interface IChargingPoint {
   id: number;
-  name: string;
-  description: string;
+  productName: string;
   price: number;
-  pictureUrl: string;
-  chargingPointType: string;
-  chargingPointLocation: string;
+  start: Date;
+  end: Date;
+  photoUrl: string;
+  location: string;
+  type: string;
 }

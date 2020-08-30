@@ -5,9 +5,7 @@ namespace Core.Entities
 {
     public class ShoppingBasket
     {
-        public ShoppingBasket()
-        {
-        }
+        public ShoppingBasket() {}
 
         public ShoppingBasket(String id)
         {
@@ -15,7 +13,6 @@ namespace Core.Entities
         }
 
         public string Id { get; set; }
-        //public List<PurchaseItem> PurchaseItems { get; set; } = new List<PurchaseItem>();
-        public List<PurchaseItem> PurchaseItems { get; set; } 
+        public List<PurchaseItem> PurchaseItems { get; set; } = new List<PurchaseItem>();
     }
 }

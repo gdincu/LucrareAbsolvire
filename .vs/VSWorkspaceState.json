@@ -5,11 +5,12 @@
     "\\EVCharge\\Client",
     "\\EVCharge\\Client\\src",
     "\\EVCharge\\Client\\src\\app",
-    "\\EVCharge\\Client\\src\\app\\core",
-    "\\EVCharge\\Client\\src\\app\\core\\http-interceptors",
-    "\\EVCharge\\Client\\src\\app\\core\\server-error",
-    "\\EVCharge\\Client\\src\\app\\core\\test-error"
+    "\\EVCharge\\Client\\src\\app\\shared",
+    "\\EVCharge\\Client\\src\\app\\shared\\models",
+    "\\EVCharge\\Core\\Entities",
+    "\\EVCharge\\Infrastructure\\Data\\Config",
+    "\\EVCharge\\Infrastructure\\Data\\SeedData"
   ],
-  "SelectedNode": "\\EVCharge\\Client\\src\\app\\core\\server-error\\server-error.component.ts",
+  "SelectedNode": "\\EVCharge\\Client\\src\\app\\shared\\models\\basket.ts",
   "PreviewInSolutionExplorer": false
 }
