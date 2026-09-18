@@ -1,0 +1,226 @@
+[
+  {
+    "Name": "CHRG-B5",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 12,
+    "PictureUrl": "images/chargingPoints/1.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 3
+  },
+  {
+    "Name": "CHRG-CJ1",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 11,
+    "PictureUrl": "images/chargingPoints/2.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 1
+  },
+  {
+    "Name": "CHRG-CV1",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 15,
+    "PictureUrl": "images/chargingPoints/3.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 2
+  },
+  {
+    "Name": "CHRG-CJ2",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 16,
+    "PictureUrl": "images/chargingPoints/4.png",
+    "ChargingPointTypeId": 2,
+    "ChargingPointLocationId": 1
+  },
+  {
+    "Name": "NeoFast1",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 12,
+    "PictureUrl": "images/chargingPoints/5.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 4
+  },
+  {
+    "Name": "NeoFast2",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 14,
+    "PictureUrl": "images/chargingPoints/6.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 5
+  },
+  {
+    "Name": "GreenCore.A",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 15,
+    "PictureUrl": "images/chargingPoints/7.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 1
+  },
+  {
+    "Name": "GreenCore.A+",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 31,
+    "PictureUrl": "images/chargingPoints/8.png",
+    "ChargingPointTypeId": 2,
+    "ChargingPointLocationId": 4
+  },
+  {
+    "Name": "GreenCore.2GEN",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 25,
+    "PictureUrl": "images/chargingPoints/9.png",
+    "ChargingPointTypeId": 2,
+    "ChargingPointLocationId": 4
+  },
+  {
+    "Name": "CHRG-B1",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 10,
+    "PictureUrl": "images/chargingPoints/10.png",
+    "ChargingPointTypeId": 2,
+    "ChargingPointLocationId": 3
+  },
+  {
+    "Name": "CHRG-B2",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 11,
+    "PictureUrl": "images/chargingPoints/11.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 3
+  },
+  {
+    "Name": "TOMi",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+    "Price": 16,
+    "PictureUrl": "images/chargingPoints/12.png",
+    "ChargingPointTypeId": 4,
+    "ChargingPointLocationId": 4
+  },
+  {
+    "Name": "GlivO-",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 14,
+    "PictureUrl": "images/chargingPoints/13.png",
+    "ChargingPointTypeId": 4,
+    "ChargingPointLocationId": 4
+  },
+  {
+    "Name": "CHRG-B3",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 22,
+    "PictureUrl": "images/chargingPoints/14.png",
+    "ChargingPointTypeId": 4,
+    "ChargingPointLocationId": 3
+  },
+  {
+    "Name": "CHRG-B4",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 22,
+    "PictureUrl": "images/chargingPoints/15.png",
+    "ChargingPointTypeId": 5,
+    "ChargingPointLocationId": 3
+  },
+  {
+    "Name": "GlivO+",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 23.99,
+    "PictureUrl": "images/chargingPoints/16.png",
+    "ChargingPointTypeId": 2,
+    "ChargingPointLocationId": 2
+  },
+  {
+    "Name": "BVF Pro",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/17.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 2
+  },
+  {
+    "Name": "MicroCharge",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/18.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 8
+  },
+  {
+    "Name": "QuadPow",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/19.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 7
+  },
+  {
+    "Name": "TriS",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/20.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 7
+  },
+  {
+    "Name": "CHRG-PT1",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/21.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 6
+  },
+  {
+    "Name": "CHRG-PT2",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/22.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 6
+  },
+  {
+    "Name": "HGN-K1",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 19.99,
+    "PictureUrl": "images/chargingPoints/23.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 5
+  },
+  {
+    "Name": "HGN-K2",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 15.20,
+    "PictureUrl": "images/chargingPoints/24.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 9
+  },
+  {
+    "Name": "HGN-K3",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 15.20,
+    "PictureUrl": "images/chargingPoints/25.png",
+    "ChargingPointTypeId": 3,
+    "ChargingPointLocationId": 9
+  },
+  {
+    "Name": "BigBiz",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 18,
+    "PictureUrl": "images/chargingPoints/26.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 10
+  },
+  {
+    "Name": "FamPro",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 18,
+    "PictureUrl": "images/chargingPoints/27.png",
+    "ChargingPointTypeId": 1,
+    "ChargingPointLocationId": 10
+  },
+  {
+    "Name": "BigBiz2",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 18,
+    "PictureUrl": "images/chargingPoints/28.png",
+    "ChargingPointTypeId": 4,
+    "ChargingPointLocationId": 10
+  }
+]
